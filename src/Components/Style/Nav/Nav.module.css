@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    padding: 30px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link{
+    color: #000;
+}
+.logo {
+    background: #000;
+    color: white;
+    padding: 10px;
+    border-radius: 100%;
+    font-weight: 900;
+    cursor: pointer;
+}
