@@ -6,7 +6,11 @@
 }
 
 .link{
+    height: auto; 
+    position: relative;
     color: #000;
+    display: inline-block;
+    
 }
 .logo {
     background: #000;
@@ -15,4 +19,23 @@
     border-radius: 100%;
     font-weight: 900;
     cursor: pointer;
+}
+.underline{
+    display: inline-block;
+    height: 1px;
+    background: #000;
+}
+.linkClass{
+    height: 1px;
+    top: 30px;
+    left: 0;
+    position: absolute;
+    background-color: #000;
+    width: 66%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.activeLink{
+    width: 100%;
 }

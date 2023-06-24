@@ -1,21 +1,59 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import Socal from './Socal';
 import classes from "../Components/Style/Nav/Nav.module.css"
 
 const Nav = () => {
-    const link = [
-        <div>
-            <Link className={classes.link} id="1" to="/">Home</Link>
-            <Link className={classes.link} id="2" to="/about">About</Link>
-            <Link className={classes.link} id="3" to="/project">Project</Link>
-            <Link className={classes.link} id="4" to="/artical">Artical</Link>
-        </div>
-    ]
+    const {pathname} = useLocation()
+    
+    const CustomLink = ({ href, title, style="" }) => {
+        
+        return <Link className={classes.link} to={href}>{title}
+        <span className={`${href === pathname ? style : classes.activeLink}`}>&nbsp;</span>
+    </Link>
+    }
+
     return (
         <div className={classes.container}>
-            {link}
-            <span className={classes.logo}>SR</span>
+            <div>
+
+                <CustomLink
+                    className={classes.link}
+                    href="/"
+                    title="Home"
+                    style={`${classes.linkClass}`}
+                >
+                </CustomLink>
+                <CustomLink
+                    className={classes.link}
+                    href="/about"
+                    title="About"
+                    style={`${classes.linkClass}`}
+                >
+                </CustomLink>
+                <CustomLink
+                    className={classes.link}
+                    href="/project"
+                    title="Project"
+                    style={`${classes.linkClass}`}
+                >
+                </CustomLink>
+                <CustomLink
+                    className={classes.link}
+                    href="/artical"
+                    title="Artical"
+                    style={`${classes.linkClass}`}
+                >
+                </CustomLink>
+            </div>
+            <motion.span
+                whileHover={{
+                    background: ["#020024", "#00d4ff", "#6a929a", "#443769", "#8daf55", "#7a4624"]
+                }}
+                transition={{ duration: 3}}
+                className={classes.logo}
+            >SR</motion.span>
             <Socal></Socal>
         </div>
     );

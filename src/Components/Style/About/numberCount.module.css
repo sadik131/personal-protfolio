@@ -1,0 +1,17 @@
+.counter {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 55px;
+}
+
+.text {
+    font-size: 22px;
+    font-weight: 300;
+    color: #777;
+}
