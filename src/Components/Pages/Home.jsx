@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className={classes.container}>
             <div className={classes.banner}>
-                <img src={bg} alt="" />
+                <img className={classes.background} src={bg} alt="" />
             </div>
             <div className={classes.textFild}>
                 <AnimateText text="Turning Vision Into Reality With Code And Design. " />

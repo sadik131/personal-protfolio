@@ -5,6 +5,7 @@ import classes from "../Style/About/About.module.css"
 import AboutMe from '../AboutMe';
 import Devloper from '../Devloper';
 import NumberCount from '../NumberCount';
+import Skill from '../Skill';
 
 const About = () => {
     return (
@@ -15,6 +16,7 @@ const About = () => {
                 <Devloper className={classes.gridCol} />
                 <NumberCount />
             </div>
+            <Skill></Skill>
         </Layout>
     );
 }

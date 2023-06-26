@@ -6,8 +6,8 @@ const Devloper = ({className=""}) => {
     return (
         <div className={`${className}`}>
             <div className={classes.banner}>
-                <img className={classes.img} src={owner} alt="" />
                 <div className={classes.background}></div>
+                <img className={classes.img} src={owner} alt="" />
             </div>
         </div>
     );

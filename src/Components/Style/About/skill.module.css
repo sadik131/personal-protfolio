@@ -1,0 +1,23 @@
+.container{
+}
+.title{
+    font-size: 4.5rem;
+    padding: 70px 0;
+    text-align: center;
+}
+.gradient{
+    height: 100vh;
+    background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffff 5px , #ffffff 65px);
+    position: relative;
+}
+.skill{
+    background: black;
+    /* position: absolute; */
+    color: white;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 100%;
+    position: absolute;
+    top: 44%;
+    left: 47%;
+}

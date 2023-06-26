@@ -21,6 +21,8 @@
 
 .banner {
     display: flex;
+    position: relative;
+    background: white;
     height: 100%;
     width: 100%;
     width: 70%;
@@ -30,5 +32,13 @@
     align-items: center;
 }
 .background{
-
+    height: 102%;
+    position: absolute;
+    width: 102%;
+    z-index: -17;
+    top: 0px;
+    right: -15px;
+    background: black;
+    border-radius: 28px;
+    
 }
