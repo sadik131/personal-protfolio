@@ -12,7 +12,7 @@ const Home = () => {
             <div className={classes.textFild}>
                 <AnimateText text="Turning Vision Into Reality With Code And Design. " />
                 <p className={classes.info}>As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.</p>
-                <div>
+                <div className={classes.buttons}>
                     <button className={classes.resume}>Resume</button>
                     <button className={classes.contact}>Contact</button>
                 </div>

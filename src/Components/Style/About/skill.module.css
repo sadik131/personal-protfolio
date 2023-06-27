@@ -7,7 +7,7 @@
 }
 .gradient{
     height: 100vh;
-    background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffff 5px , #ffffff 65px);
+    background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffff 5px , #ffffff 100px);
     position: relative;
 }
 .skill{
@@ -20,4 +20,10 @@
     position: absolute;
     top: 44%;
     left: 47%;
+}
+
+@media only screen and (max-width: 450px){
+    .gradient{
+        background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffff 5px , #ffffff 65px);
+    }
 }

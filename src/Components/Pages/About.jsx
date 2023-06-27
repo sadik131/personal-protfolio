@@ -6,6 +6,8 @@ import AboutMe from '../AboutMe';
 import Devloper from '../Devloper';
 import NumberCount from '../NumberCount';
 import Skill from '../Skill';
+import Experience from '../Experience';
+import Education from '../Education';
 
 const About = () => {
     return (
@@ -17,6 +19,8 @@ const About = () => {
                 <NumberCount />
             </div>
             <Skill></Skill>
+            <Experience></Experience>
+            <Education></Education>
         </Layout>
     );
 }

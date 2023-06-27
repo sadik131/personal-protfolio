@@ -1,0 +1,68 @@
+.container {
+    margin: 100px auto;
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    width: 45%;
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.location span,
+p {
+    color: gray;
+    margin: 10px 5px;
+}
+
+.text {
+    font-size: 17px;
+    margin: 10px 0;
+    color: #000;
+}
+
+.experience {
+    position: relative;
+}
+
+.scrollbar {
+    position: absolute;
+    z-index: 5;
+    width: 2px;
+    height: 100%;
+    transform-origin: top;
+    background: #000;
+}
+
+.icon {
+    position: absolute;
+    left: -14px;
+    font-size: 30px;
+}
+
+.title {
+    font-size: 4.5rem;
+}
+
+@media only screen and (max-width: 450px) {
+    .container {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .list {
+        width: 75%;
+        ;
+    }
+}

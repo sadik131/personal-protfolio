@@ -7,7 +7,9 @@ const Skill = () => {
     const SkillSection = ({ title, x, y }) => {
         return <motion.div
             initial={{ x: 0, y: 0 }}
-            animate={{ x: x, y: y }}
+            whileInView={{ x: x, y: y }}
+            transition={{duration:1}}
+            viewport={{once:true}}
             className={classes.skill}>
             {title}
         </motion.div>
@@ -22,7 +24,7 @@ const Skill = () => {
                 <SkillSection x="-88vh" y="-0vh" title="css"></SkillSection>
                 <SkillSection x="-55vh" y="30vh" title="javascript"></SkillSection>
                 <SkillSection x="55vh" y="30vh" title="react"></SkillSection>
-                <SkillSection x="85vh" y="00vh" title="MERN"></SkillSection>
+                <SkillSection x="70vh" y="-2vh" title="MERN"></SkillSection>
                 <SkillSection x="55vh" y="-30vh" title="Mongodb"></SkillSection>
                 <SkillSection x="-6vh" y="-45vh" title="fireBase"></SkillSection>
             </div>

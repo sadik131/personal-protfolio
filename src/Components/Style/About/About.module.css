@@ -4,6 +4,7 @@
 
 .grid {
     display: flex;
+    margin: 20px 0;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -31,7 +32,8 @@
     justify-content: center;
     align-items: center;
 }
-.background{
+
+.background {
     height: 102%;
     position: absolute;
     width: 102%;
@@ -40,5 +42,29 @@
     right: -15px;
     background: black;
     border-radius: 28px;
-    
+
+}
+
+@media only screen and (max-width: 450px) {
+    .grid {
+        display: block;
+    }
+
+    .gridCol {
+        width: 100%;
+    }
+
+    .banner {
+        width: 85%;
+        border: 0;
+        padding: 15px;
+    }
+
+    .background {
+        height: 106%;
+        width: 107%;
+        z-index: -17;
+        top: -3px;
+        right: -18px;
+    }
 }

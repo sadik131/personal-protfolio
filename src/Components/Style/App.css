@@ -95,3 +95,9 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 450px){
+  .heading-text{
+    font-size: 40px;
+  }
+}
