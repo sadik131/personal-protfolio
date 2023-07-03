@@ -38,3 +38,8 @@
     z-index: 10;
     display: none;
 }
+@media only screen and (max-width: 660px){
+    .artical{
+        display: block;
+    }
+  }

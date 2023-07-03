@@ -24,6 +24,7 @@
 
 @media only screen and (max-width: 450px){
     .gradient{
+        display: none;
         background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffff 5px , #ffffff 65px);
     }
 }

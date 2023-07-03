@@ -18,12 +18,19 @@
 .icon {
     color: pink;
 }
+@media only screen and (max-width: 750px){
+    .copy{
+        font-size: 12px;
+    }
+}
 @media only screen and (max-width: 450px){
     .underline{
-        margin: 27px 0 10px 0;
+        margin: 27px auto 10px auto;
+        width: 96%;
+        
     }
     .copy{
         padding: 20px 7px;
-        font-size: 8px;
+        font-size: 6px;
     }
 }

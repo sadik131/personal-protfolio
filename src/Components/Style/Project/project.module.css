@@ -141,3 +141,25 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 600px){
+    .card{
+        width: 80%;
+        display: block;
+    }
+    .thumbnail{
+        width: 100%;
+    }
+    .secendText{
+        font-size: 21px;
+    }
+}
+@media only screen and (max-width: 460px){
+    .singelCards{
+        display: block;
+    }
+    .singelCard{
+        width: 90%;
+        margin: 15px auto;
+    }
+}

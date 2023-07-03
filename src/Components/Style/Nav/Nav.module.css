@@ -39,3 +39,8 @@
 .activeLink{
     width: 100%;
 }
+@media only screen and (max-width: 715px){
+    .container{
+        /* display: none; */
+    }
+}

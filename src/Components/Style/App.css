@@ -63,7 +63,8 @@ a {
   border-radius: 20px;
   margin: 10px auto;
 }
-.SingelSecendText:hover{
+
+.SingelSecendText:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -95,12 +96,25 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-.container{
+
+.container {
   padding: 70px 0;
 }
 
-@media only screen and (max-width: 450px){
-  .heading-text{
+@media only screen and (max-width: 450px) {
+  .heading-text {
     font-size: 40px;
   }
+
+  .SingelSecendText {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .singelCard {
+    width: 90%;
+    margin: 20px auto;
+  }
+
 }
