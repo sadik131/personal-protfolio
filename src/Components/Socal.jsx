@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Socal = () => {
     
     return (
-        <div>
+        <div className={classes.mobile}>
             <motion.a
             whileHover={{scale:1.2}}
             className={classes.link}>

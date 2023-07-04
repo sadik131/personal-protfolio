@@ -7,3 +7,10 @@
     padding: 0;
     color: black;
 }
+
+/* responsive nav bar */
+@media only screen and (max-width: 550px){
+    .mobile{
+        display: none;
+    }
+}
