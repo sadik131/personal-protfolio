@@ -13,7 +13,7 @@ const Nav = () => {
 
     const CustomLink = ({ href, title, style = "" }) => {
 
-        return <Link onClick={()=>setOpenNav(!openNav)} className={classes.link} to={href}>{title}
+        return <Link onClick={()=>setOpenNav(false)} className={classes.link} to={href}>{title}
             <span className={`${href === pathname ? style : classes.activeLink}`}>&nbsp;</span>
         </Link>
     }

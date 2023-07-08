@@ -51,6 +51,7 @@
     font-size: 33px;
     margin-bottom: 12px;
     cursor: pointer;
+    color: black;
 }
 
 .secendText:hover {
@@ -64,6 +65,7 @@
 
 .icon {
     font-size: 35px;
+    color: black;
 }
 
 .cardFooter {
