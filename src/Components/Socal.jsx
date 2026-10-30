@@ -1,45 +1,80 @@
 import React from 'react';
-import { AiOutlineTwitter, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { BsFacebook } from 'react-icons/bs';
-import classes from "../Components/Style/Nav/icon.module.css"
+import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FaFacebookF } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { personalInfo } from '../data/portfolioData';
 
-const Socal = () => {
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: personalInfo.social.github,
+    icon: FiGithub,
+    color: '#8BFF6A',
+  },
+  {
+    name: 'LinkedIn',
+    url: personalInfo.social.linkedin,
+    icon: FiLinkedin,
+    color: '#63B3FF',
+  },
+  {
+    name: 'Twitter',
+    url: personalInfo.social.twitter,
+    icon: FiTwitter,
+    color: '#38bdf8',
+  },
+  {
+    name: 'Facebook',
+    url: personalInfo.social.facebook,
+    icon: FaFacebookF,
+    color: '#60a5fa',
+  },
+];
 
-    return (
-        <div className={classes.mobile}>
-            <motion.a
-                whileHover={{ scale: 1.2 }}
-                className={classes.link}>
-                <Link to="https://twitter.com/SuptoSarka48161" target='_blank'>
-                    <AiOutlineTwitter
-                        className={classes.icon} />
-                </Link>
-            </motion.a>
-            <motion.a
-                whileHover={{ scale: 1.2 }}
-                className={classes.link}>
-                <Link to="https://github.com/sadik131" target='_blank'>
-                    <AiFillGithub className={classes.icon} />
-                </Link>
-            </motion.a>
-            <motion.a
-                whileHover={{ scale: 1.2 }}
-                className={classes.link}>
-                <Link to="https://www.linkedin.com/in/salatus-sadik-1a22a3212/" target='_blank'>
-                    <AiFillLinkedin className={classes.icon} />
-                </Link>
-            </motion.a>
-            <motion.a
-                whileHover={{ scale: 1.2 }}
-                className={classes.link}>
-                <Link to="https://www.facebook.com/naim.sarker.716" target='_blank'>
-                <BsFacebook className={classes.icon} />
-                </Link>
-            </motion.a>
-        </div>
-    );
-}
+const Socal = ({ className = '', iconSize = 18 }) => {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }} className={className}>
+      {socialLinks.map((item) => {
+        const IconComponent = item.icon;
+        return (
+          <motion.a
+            key={item.name}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={item.name}
+            whileHover={{ scale: 1.15, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              background: 'var(--bg-tertiary)',
+              color: 'var(--text-secondary)',
+              border: '1px solid var(--border-color)',
+              textDecoration: 'none',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = item.color;
+              e.currentTarget.style.borderColor = item.color;
+              e.currentTarget.style.boxShadow = `0 0 14px ${item.color}50`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'var(--text-secondary)';
+              e.currentTarget.style.borderColor = 'var(--border-color)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <IconComponent size={iconSize} />
+          </motion.a>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Socal;

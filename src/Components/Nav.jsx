@@ -1,107 +1,231 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiSun, FiMoon, FiMenu, FiX, FiDownload, FiArrowUpRight } from 'react-icons/fi';
+import { useTheme } from '../context/ThemeContext';
+import { personalInfo } from '../data/portfolioData';
 import Socal from './Socal';
-import classes from "../Components/Style/Nav/Nav.module.css"
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { RxCross2 } from 'react-icons/rx';
+import classes from '../Components/Style/Nav/Nav.module.css';
 
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'journey', label: 'Journey' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'services', label: 'Services' },
+  { id: 'contact', label: 'Contact' },
+];
 
 const Nav = () => {
-    const { pathname } = useLocation()
-    const [openNav, setOpenNav] = useState(false)
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const { theme, toggleTheme } = useTheme();
 
-    const CustomLink = ({ href, title, style = "" }) => {
+  // Scroll detection for navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
 
-        return <Link onClick={()=>setOpenNav(false)} className={classes.link} to={href}>{title}
-            <span className={`${href === pathname ? style : classes.activeLink}`}>&nbsp;</span>
-        </Link>
+      // Detect active section on single page
+      if (pathname === '/') {
+        const sections = navItems.map((item) => document.getElementById(item.id));
+        const scrollPosition = window.scrollY + 200;
+
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = sections[i];
+          if (section && section.offsetTop <= scrollPosition) {
+            setActiveSection(navItems[i].id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
+
+  const handleNavClick = (sectionId) => {
+    setMobileMenuOpen(false);
+
+    if (pathname === '/') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(sectionId);
+      }
+    } else {
+      navigate(`/#${sectionId}`);
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
+  };
 
-    // navbur function
+  return (
+    <header className={`${classes.headerWrapper} ${isScrolled ? classes.scrolledHeader : ''}`}>
+      <div className={classes.container}>
+        <div className={classes.leftSection}>
+          <Link
+            to="/"
+            onClick={() => handleNavClick('home')}
+            className={classes.logo}
+          >
+            <span className={classes.logoCode}>&lt;</span>
+            <span>{personalInfo.firstName}</span>
+            <span className={classes.logoCode}>/&gt;</span>
+          </Link>
 
-
-
-    return (
-        <div className={classes.container}>
-            <div className={classes.mobile}>
-                <CustomLink
-                    href="/"
-                    title="Home"
-                    style={`${classes.linkClass}`}
-                >
-                </CustomLink>
-                <CustomLink
-                    href="/about"
-                    title="About"
-                    style={`${classes.linkClass}`}
-                >
-                </CustomLink>
-                <CustomLink
-                    href="/project"
-                    title="Project"
-                    style={`${classes.linkClass}`}
-                >
-                </CustomLink>
-                <CustomLink
-                    href="/artical"
-                    title="Artical"
-                    style={`${classes.linkClass}`}
-                >
-                </CustomLink>
-            </div>
-            <div className={classes.hamburgerMenu}>
-                <GiHamburgerMenu
-                    onClick={() => setOpenNav(!openNav)}
-                    className={classes.icon} />
-            </div>
-
-            {/* mobile navbar */}
-
-            {openNav && <motion.div>
-                <div>
-                    <RxCross2
-                        onClick={() => setOpenNav(!openNav)}
-                        className={classes.cross} />
-                </div>
-                <div className={classes.phon}>
-                    <CustomLink
-                        href="/"
-                        title="Home"
-                        style={`${classes.mobilelinkClass}`}
+          <nav>
+            <ul className={classes.navLinks}>
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id && pathname === '/';
+                return (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => handleNavClick(item.id)}
+                      className={`${classes.navLink} ${isActive ? classes.navLinkActive : ''}`}
                     >
-                    </CustomLink>
-                    <CustomLink
-                        href="/about"
-                        title="About"
-                        style={`${classes.mobilelinkClass}`}
-                    >
-                    </CustomLink>
-                    <CustomLink
-                        href="/project"
-                        title="Project"
-                        style={`${classes.mobilelinkClass}`}
-                    >
-                    </CustomLink>
-                    <CustomLink
-                        href="/artical"
-                        title="Artical"
-                        style={`${classes.mobilelinkClass}`}
-                    >
-                    </CustomLink>
-                </div>
-            </motion.div>}
-
-            <motion.span
-                whileHover={{
-                    background: ["#020024", "#00d4ff", "#6a929a", "#443769", "#8daf55", "#7a4624"]
-                }}
-                transition={{ duration: 3 }}
-                className={classes.logo}
-            >SR</motion.span>
-            <Socal></Socal>
+                      {item.label}
+                      {isActive && (
+                        <motion.span
+                          layoutId="activeNavIndicator"
+                          className={classes.activeIndicator}
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </div>
-    );
-}
+
+        <div className={classes.rightSection}>
+          <a
+            href={personalInfo.resumeUrl}
+            download
+            className={classes.resumeBtn}
+            title="Download Full-Stack Resume"
+          >
+            <FiDownload size={14} /> Resume
+          </a>
+
+          <button
+            onClick={toggleTheme}
+            className={classes.themeToggle}
+            aria-label="Toggle Dark/Light Mode"
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          >
+            {theme === 'dark' ? <FiSun size={17} /> : <FiMoon size={17} />}
+          </button>
+
+          <button
+            onClick={() => handleNavClick('contact')}
+            className={classes.ctaBtn}
+          >
+            Let's Talk <FiArrowUpRight size={15} />
+          </button>
+
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className={classes.hamburgerBtn}
+            aria-label="Open Navigation Menu"
+          >
+            <FiMenu size={22} />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className={classes.mobileOverlay}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className={classes.mobileDrawerHeader}>
+              <Link
+                to="/"
+                className={classes.logo}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('home');
+                }}
+              >
+                <span className={classes.logoCode}>&lt;</span>
+                <span>{personalInfo.firstName}</span>
+                <span className={classes.logoCode}>/&gt;</span>
+              </Link>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className={classes.mobileCloseBtn}
+                aria-label="Close Menu"
+              >
+                <FiX size={20} />
+              </button>
+            </div>
+
+            <div className={classes.mobileNavLinks}>
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    className={`${classes.mobileNavLink} ${
+                      isActive ? classes.mobileNavLinkActive : ''
+                    }`}
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className={classes.mobileDrawerFooter}>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <a
+                  href={personalInfo.resumeUrl}
+                  download
+                  className="btn-secondary"
+                  style={{ flex: 1, textAlign: 'center', padding: '10px' }}
+                >
+                  <FiDownload size={15} /> Resume
+                </a>
+                <button
+                  onClick={() => handleNavClick('contact')}
+                  className="btn-primary"
+                  style={{ flex: 1, textAlign: 'center', padding: '10px' }}
+                >
+                  Contact
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '6px' }}>
+                <Socal iconSize={18} />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+};
 
 export default Nav;

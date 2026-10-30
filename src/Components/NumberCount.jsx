@@ -1,15 +1,22 @@
 import React from 'react';
-import classes from '../Components/Style/About/numberCount.module.css';
 import Count from './Count';
 
 const NumberCount = () => {
-    return (
-        <div className={classes.counter}>
-            <Count count={50} text="Satisfied Clients"/>
-            <Count count={40} text="Projects Completed"/>
-            <Count count={2} text="Years Of Experience"/>
-        </div>
-    );
-}
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        gap: '20px',
+        width: '100%',
+      }}
+    >
+      <Count count={25} text="Projects Built" suffix="+" />
+      <Count count={3} text="Years Experience" suffix="+" />
+      <Count count={15} text="Tech & Tools" suffix="+" />
+    </div>
+  );
+};
 
 export default NumberCount;

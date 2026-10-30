@@ -1,28 +1,39 @@
-import React from 'react'
-import "../src/Components/Style/App.css"
-import Home from './Components/Pages/Home'
-import { Route, Router, Routes } from 'react-router-dom'
-import Nav from './Components/Nav'
-import About from './Components/Pages/About'
-import Artical from './Components/Pages/Artical'
-import Project from './Components/Pages/Project'
-import Footer from './Components/Footer'
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Nav from './Components/Nav';
+import Home from './Components/Pages/Home';
+import About from './Components/Pages/About';
+import Project from './Components/Pages/Project';
+import Artical from './Components/Pages/Artical';
+import Contact from './Components/Pages/Contact';
+import Footer from './Components/Footer';
 
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  return (
-    <>
-    <Nav></Nav>
-    <Routes>
-      <Route path='/' element={<Home />}></Route>
-      <Route path='/about' element={<About />}></Route>
-      <Route path='/project' element={<Project />}></Route>
-      <Route path='/artical' element={<Artical />}></Route>
-    </Routes>
-    <Footer></Footer>
-    </>
-  )
+  return null;
 }
 
-export default App
+function App() {
+  return (
+    <div className="app-container">
+      <ScrollToTop />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/artical" element={<Artical />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;

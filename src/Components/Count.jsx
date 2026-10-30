@@ -1,41 +1,70 @@
 import React, { useEffect, useRef } from 'react';
-import classes from '../Components/Style/About/numberCount.module.css';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 
-const Count = ({ count, text }) => {
+const Count = ({ count, text, suffix = '+' }) => {
+  const ref = useRef(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration: 2500, bounce: 0 });
+  const inView = useInView(ref, { once: true, margin: '-50px' });
 
-    const AnimateNumber = ({number}) => {
-        const ref = useRef()
-        const motionValue = useMotionValue(0)
-        const springValue = useSpring(motionValue, { duration: 3000 })
-        const inView = useInView(ref)
-
-        useEffect(()=>{
-            if(inView){
-                motionValue.set(number)
-            }
-        },[inView,motionValue])
-
-        useEffect(()=>{
-            springValue.on("change",(latest)=>{
-                if(ref.current && latest.toFixed(0) <= number){
-                    ref.current.textContent = latest.toFixed(0)
-                }
-            })
-        },[])
-
-        return <h2 ref={ref}></h2>
+  useEffect(() => {
+    if (inView) {
+      motionValue.set(count);
     }
+  }, [inView, motionValue, count]);
 
-    return (
-        <div>
-            <span className={classes.title}>
-            <AnimateNumber number={count}/> +
-            </span>
-            <h4 className={classes.text}>{text}</h4>
+  useEffect(() => {
+    const unsubscribe = springValue.on('change', (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Math.floor(latest);
+      }
+    });
+    return () => unsubscribe();
+  }, [springValue]);
 
-        </div>
-    );
-}
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '20px 16px',
+        background: 'var(--bg-card)',
+        border: '1px solid var(--border-color)',
+        borderRadius: 'var(--radius-md)',
+        boxShadow: 'var(--card-shadow)',
+        textAlign: 'center',
+        minWidth: '130px',
+      }}
+    >
+      <div
+        style={{
+          fontSize: '2.4rem',
+          fontWeight: 800,
+          lineHeight: 1,
+          marginBottom: '8px',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+        className="gradient-text"
+      >
+        <span ref={ref}>0</span>
+        <span>{suffix}</span>
+      </div>
+      <span
+        style={{
+          fontSize: '0.85rem',
+          color: 'var(--text-secondary)',
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          letterSpacing: '0.04em',
+        }}
+      >
+        {text}
+      </span>
+    </div>
+  );
+};
 
 export default Count;
