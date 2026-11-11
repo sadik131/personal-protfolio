@@ -17,7 +17,7 @@ export const personalInfo = {
   introduction:
     'I am a passionate web developer focused on building modern, responsive, and user-friendly web applications. I enjoy working across frontend and backend technologies, designing scalable application structures, integrating databases, and turning ideas into functional digital products.\n\nMy development journey includes working with modern JavaScript frameworks, PHP-based backend technologies, databases, and contemporary development tools. I continuously explore new technologies and improve my problem-solving skills through hands-on projects.',
   location: 'Dhaka, Bangladesh',
-  email: 'salatussadik.dev@gmail.com',
+  email: 'salatussadik131@gmail.com',
   availableForWork: true,
   statusText: 'Open for Opportunities',
   resumeUrl: '/resume.pdf', // Place your resume.pdf in public/ directory
@@ -104,40 +104,66 @@ export const skillsCategories = [
   },
 ];
 
+
 export const journeyMilestones = [
   {
-    date: 'JULY 2026',
-    title: 'Foundations & Web Exploration',
+    date: '2020',
+    title: 'The Beginning — Entering the World of Technology',
     description:
-      'Started documenting my web development learning journey, focusing on website structure, semantic HTML, Bootstrap layouts, and exploring PHP & Laravel backend fundamentals.',
-    tags: ['HTML5', 'Bootstrap', 'PHP Basics', 'Website Structure'],
+      'Began my journey into the world of technology and programming, developing an interest in how websites work and exploring the fundamentals of web technologies and digital experiences.',
+    tags: ['Computer Fundamentals', 'HTML', 'CSS', 'Web Technologies'],
     accent: '#8BFF6A',
   },
   {
-    date: 'AUGUST 2026',
-    title: 'Responsive UI & Architecture Exploration',
+    date: '2021',
+    title: 'Building the Frontend Foundation',
     description:
-      'Practiced responsive website sections, complex UI development, Bootstrap layouts, and explored Laravel and Vue.js-based application architecture.',
-    tags: ['Responsive Design', 'Bootstrap 5', 'Laravel MVC', 'Vue.js Intro'],
+      'Developed a strong foundation in frontend development by working with HTML, CSS, JavaScript, and responsive layouts. Started transforming design concepts into functional and visually structured web interfaces.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive UI'],
     accent: '#63B3FF',
   },
   {
-    date: 'SEPTEMBER 2026',
-    title: 'Linux Environments, Backends & Next.js',
+    date: '2022',
+    title: 'Interactive Interfaces & Modern Web Design',
     description:
-      'Worked with Linux/Ubuntu development environments, PHP, Composer, Laravel, MySQL, Git, GitHub, and initiated Next.js full-stack project development.',
-    tags: ['Linux / Ubuntu', 'MySQL', 'Laravel', 'Next.js', 'Git / GitHub'],
+      'Focused on creating interactive user experiences, improving JavaScript proficiency, exploring Bootstrap, and understanding modern UI development principles through practical implementation.',
+    tags: ['JavaScript ES6+', 'Bootstrap', 'DOM Manipulation', 'UI/UX'],
     accent: '#8BFF6A',
   },
   {
-    date: 'OCTOBER 2026',
-    title: 'Next.js Applications, Prisma & State Architecture',
+    date: '2023',
+    title: 'Expanding into Backend Development',
     description:
-      'Worked on Next.js applications, Prisma and MongoDB integration, Redux Toolkit state architecture, and developed a YouTube lecture quiz application.',
-    tags: ['Next.js 16', 'Prisma ORM', 'MongoDB', 'Redux Toolkit', 'Quiz App'],
+      'Moved beyond frontend development and started exploring server-side programming, database concepts, PHP fundamentals, and dynamic website development while strengthening overall application development skills.',
+    tags: ['PHP', 'MySQL', 'Backend Fundamentals', 'API Concepts'],
     accent: '#63B3FF',
+  },
+  {
+    date: '2024',
+    title: 'Backend Engineering & MVC Architecture',
+    description:
+      'Deepened my understanding of backend engineering through Laravel, MVC architecture, database relationships, application structure, and server-side development practices.',
+    tags: ['PHP', 'Laravel', 'MVC Architecture', 'MySQL'],
+    accent: '#8BFF6A',
+  },
+  {
+    date: '2025',
+    title: 'Modern Development Ecosystem & Full-Stack Growth',
+    description:
+      'Expanded my development workflow by exploring Vue.js, Linux-based environments, version control, GitHub, API integration, and modern frontend-backend application architecture.',
+    tags: ['Vue.js', 'Linux / Ubuntu', 'Git', 'GitHub', 'REST APIs'],
+    accent: '#63B3FF',
+  },
+  {
+    date: '2026',
+    title: 'Advanced Full-Stack Applications & Next.js',
+    description:
+      'Focused on modern full-stack application development using Next.js, Prisma ORM, MongoDB, and Redux Toolkit. Worked on application architecture and developed a YouTube lecture-based quiz application.',
+    tags: ['Next.js 16', 'Prisma ORM', 'MongoDB', 'Redux Toolkit', 'Full-Stack Projects'],
+    accent: '#8BFF6A',
   },
 ];
+
 
 export const currentlyExploring = [
   'Advanced JavaScript Patterns',
@@ -178,7 +204,7 @@ export const projectsData = [
     ],
     myContribution:
       'Architected service models, integrated database schemas with Prisma, built authentication flows, and implemented dashboard controls.',
-    liveUrl: 'https://shiko.vercel.app/', // Existing live link or fallback
+    liveUrl: 'https://shiko.vercel.app/', 
     repoUrl: 'https://github.com/sadik131',
     hasRealRepo: false, // Set to true if standalone public repo URL is confirmed
     featured: true,

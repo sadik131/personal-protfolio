@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCompass, FiCode, FiLayers, FiDatabase, FiTrendingUp, FiMapPin, FiMail } from 'react-icons/fi';
 import { personalInfo } from '../../data/portfolioData';
-import owner from '../assets/developer-pic-2.webp';
+import owner from '../assets/onwer.png';
 
 const AboutSection = () => {
   return (

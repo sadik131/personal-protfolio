@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import owner from './assets/developer-pic-2.webp';
+import owner from './assets/waterImage.png';
 
 const Devloper = ({ className = '' }) => {
   return (

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FiArrowDown, FiDownload, FiGithub, FiLinkedin, FiLayers, FiCheckCircle } from 'react-icons/fi';
 import { SiReact, SiNextdotjs, SiLaravel, SiMongodb } from 'react-icons/si';
 import { personalInfo } from '../../data/portfolioData';
-import bg from '../assets/developer-pic-1.webp';
+import bg from '../assets/waterImage.png';
 import classes from '../Style/Home/Home.module.css';
 
 const HeroSection = () => {

@@ -89,7 +89,7 @@ const JourneySection = () => {
                     gap: '6px',
                   }}
                 >
-                  <FiCalendar size={14} /> {item.date}
+                  {/* <FiCalendar size={14} /> {item.date} */}
                 </span>
 
                 <span
