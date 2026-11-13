@@ -66,7 +66,6 @@ export const skillsCategories = [
       { name: 'MySQL', level: 'Project Experience', desc: 'Relational data modeling, queries' },
       { name: 'MongoDB', level: 'Project Experience', desc: 'NoSQL collections, document indexing' },
       { name: 'Prisma', level: 'Project Experience', desc: 'Type-safe database ORM for Next.js' },
-      { name: 'Eloquent ORM', level: 'Project Experience', desc: 'Laravel active-record ORM' },
     ],
   },
   {
@@ -74,7 +73,6 @@ export const skillsCategories = [
     description: 'State management and secure authentication',
     skills: [
       { name: 'Redux Toolkit', level: 'Project Experience', desc: 'Centralized state slices & selectors' },
-      { name: 'Pinia', level: 'Familiar With', desc: 'Intuitive state management for Vue' },
       { name: 'NextAuth', level: 'Project Experience', desc: 'OAuth & credentials authentication' },
       { name: 'Laravel Sanctum', level: 'Familiar With', desc: 'Token-based API authentication' },
     ],
@@ -91,7 +89,6 @@ export const skillsCategories = [
       { name: 'Composer', level: 'Hands-on Experience', desc: 'PHP dependency management' },
       { name: 'XAMPP', level: 'Hands-on Experience', desc: 'Local Apache & MySQL server environment' },
       { name: 'Cloudinary', level: 'Project Experience', desc: 'Cloud image upload & asset optimization' },
-      { name: 'Tiptap', level: 'Project Experience', desc: 'Rich text editor integration' },
     ],
   },
   {
