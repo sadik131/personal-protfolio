@@ -7,7 +7,7 @@ import { projectsData } from '../../data/portfolioData';
 import shikhoImg from '../assets/concol.png';
 import groceryImg from '../assets/grocery.png';
 import mobileImg from '../assets/proect.png';
-import cryptoImg from '../assets/crypto-screener-cover-image.webp';
+import cryptoImg from '../assets/crypto-screener-cover-image.png';
 import doctorImg from '../assets/doctor.png';
 
 const projectImages = {
@@ -166,61 +166,9 @@ const ProjectsSection = () => {
                   >
                     {project.category}
                   </span>
-                  <h3
-                    style={{
-                      fontSize: '1.35rem',
-                      fontWeight: 700,
-                      color: 'var(--text-primary)',
-                      lineHeight: '1.3',
-                    }}
-                  >
-                    {project.title}
-                  </h3>
+                 
                 </div>
 
-                <p
-                  style={{
-                    fontSize: '0.92rem',
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.65',
-                  }}
-                >
-                  {project.description}
-                </p>
-
-                {/* Tech Pills */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  {project.technologies.slice(0, 5).map((t) => (
-                    <span
-                      key={t}
-                      style={{
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        padding: '3px 10px',
-                        borderRadius: 'var(--radius-full)',
-                        background: 'var(--bg-tertiary)',
-                        border: '1px solid var(--border-color)',
-                        color: 'var(--text-secondary)',
-                        fontFamily: 'var(--font-mono)',
-                      }}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                  {project.technologies.length > 5 && (
-                    <span
-                      style={{
-                        fontSize: '0.75rem',
-                        padding: '3px 8px',
-                        borderRadius: 'var(--radius-full)',
-                        background: 'var(--bg-tertiary)',
-                        color: 'var(--text-muted)',
-                      }}
-                    >
-                      +{project.technologies.length - 5}
-                    </span>
-                  )}
-                </div>
 
                 {/* Card Actions */}
                 <div
@@ -234,44 +182,8 @@ const ProjectsSection = () => {
                     gap: '12px',
                   }}
                 >
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="btn-secondary"
-                    style={{ padding: '8px 16px', fontSize: '0.85rem' }}
-                  >
-                    <FiInfo size={15} /> Highlights & Details
-                  </button>
 
                   <div style={{ display: 'flex', gap: '8px' }}>
-                    {project.hasRealRepo ? (
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-secondary"
-                        style={{ padding: '8px 12px' }}
-                        title="View Source Repository"
-                      >
-                        <FiGithub size={16} />
-                      </a>
-                    ) : (
-                      <span
-                        title="Repository configured upon release"
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          padding: '8px 12px',
-                          borderRadius: 'var(--radius-full)',
-                          background: 'var(--bg-tertiary)',
-                          color: 'var(--text-muted)',
-                          fontSize: '0.8rem',
-                          cursor: 'default',
-                        }}
-                      >
-                        <FiGithub size={16} />
-                      </span>
-                    )}
-
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}

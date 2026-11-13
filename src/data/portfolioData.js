@@ -201,7 +201,7 @@ export const projectsData = [
     ],
     myContribution:
       'Architected service models, integrated database schemas with Prisma, built authentication flows, and implemented dashboard controls.',
-    liveUrl: 'https://shiko.vercel.app/', 
+    liveUrl: 'https://powerful-kiwi-548792.framer.app/', 
     repoUrl: 'https://github.com/sadik131',
     hasRealRepo: false, // Set to true if standalone public repo URL is confirmed
     featured: true,
@@ -233,7 +233,7 @@ export const projectsData = [
     ],
     myContribution:
       'Designed marketplace workflow diagrams, planned database relations in MySQL, and prototyped user dashboard layouts.',
-    liveUrl: 'https://mobile-shop-project-eight.vercel.app/',
+    liveUrl: 'https://marvelous-rectangle-724967.framer.app/',
     repoUrl: 'https://github.com/sadik131',
     hasRealRepo: false,
     featured: true,
@@ -256,8 +256,8 @@ export const projectsData = [
     ],
     myContribution:
       'Built backend routing, database migrations, controllers, and tested workflows using Linux environment.',
-    liveUrl: 'https://mobile-shop-project-eight.vercel.app/',
-    repoUrl: 'https://github.com/sadik131/mobile_Shop_project',
+    liveUrl: 'https://tiny-directions-311187.framer.app/',
+    repoUrl: 'https://github.com/sadik131',
     hasRealRepo: true,
     featured: false,
   },
@@ -278,7 +278,7 @@ export const projectsData = [
     ],
     myContribution:
       'Implemented quiz component logic, time synchronization concepts, and modular Next.js application structure.',
-    liveUrl: 'https://shiko.vercel.app/',
+    liveUrl: 'https://altruistic-convention-551740.framer.app/',
     repoUrl: 'https://github.com/sadik131',
     hasRealRepo: false,
     featured: false,
@@ -301,7 +301,7 @@ export const projectsData = [
     ],
     myContribution:
       'Designed and coded the entire component collection across multiple device breakpoints.',
-    liveUrl: 'https://melodic-vacherin-cf23a5.netlify.app/',
+    liveUrl: 'https://caring-everyone-143384.framer.app/',
     repoUrl: 'https://github.com/sadik131',
     hasRealRepo: false,
     featured: false,

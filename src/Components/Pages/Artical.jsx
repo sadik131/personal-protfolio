@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiClock, FiCalendar, FiArrowUpRight, FiBookOpen } from 'react-icons/fi';
 import Layout from '../Layout';
-import thumbnet from '../assets/crypto-screener-cover-image.webp';
+import thumbnet from '../assets/crypto-screener-cover-image.png';
 import reactImg from '../assets/react.png';
 import AllArtical from '../AllArtical';
 
